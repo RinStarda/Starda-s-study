@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="index.css">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+
+		<!--声明式渲染
+		<div id="app">
+			{{massage}}
+		</div>
+
+		<div id="app-2">
+			v-bind特性被称为指令。
+			该指令的意思是：“将这个元素结点的title特性和Vue实例的message属性保持一致”
+			<span v-bind:title="massage">
+				小八是卡莲的~
+			</span>
+		</div>-->
+
+		<!--条件与循环
+
+		<div id="app-3">
+			<p v-if="seen">现在你看到我了</p>
+		</div>
+
+		<div id="app-4">
+			<ol>
+				<li v-for="todo in todos">
+					{{todo.text}}
+				</li>
+			</ol>
+		</div>-->
+
+		<!--处理用户输入
+		<div id="app-5">
+			<p>{{message}}</p>
+			<button v-on:click="reverseMessage">逆转消息</button>
+		</div>
+
+		<div id="app-6">
+			<p>{{message}}</p>
+			<input v-model="message">
+		</div>-->
+
+		<!--组件化应用构建-->
+		<ol>
+			<!--创建一个todo-item组件的实例-->
+			<todo-item></todo-item>
+		</ol>
+
+		<div id="app-7">
+			<ol>
+				<!--
+					现在我们为每个todo-item提供todo对象
+					todo对象是变量，即其内容可以是动态的。
+					我们也需要为每个组件提供一个“key”
+				-->
+				<todo-item v-for="item in groceryList"
+							v-bind:todo="item"
+							v-bind:key="item.id"
+				></todo-item>
+			</ol>
+		</div>
+		<script src="index.js"></script>
+	</body>
+</html>
